@@ -19,14 +19,35 @@ Use console.log() to clearly show the before-and-after type conversions.
 */
 
 
-let result = "5" - 2;
+let result = Number("5") - 2;
 console.log("The result is: " + result);
 
-let isValid = Boolean("false");
+let isValid = Boolean(false);
+//removed double quotes around false, as "false" is not recognized as a falsy value
 if (isValid) {
-    console.log("This is valid!");
+  console.log("This is valid!");
 }
+else {
+  console.log("This is not valid.");
+}
+//added additional else statement for clarity
 
 let age = "25";
-let totalAge = age + 5;
+let totalAge = Number(age) + 5;
+//using Number() to explicity convert age prevents totalAge from logging 255
 console.log("Total Age: " + totalAge);
+
+////////////////////////////////
+
+let restaurantStatus = "It's noon";
+if (restaurantStatus) {
+  console.log("The restaurant is open, right now.");
+}
+else {
+  console.log("The restaurant is closed, right now!");
+}
+
+
+let year = "2025";
+let futureYear = Number(year) + 10 + Number(null);
+console.log("I'll be 10 years older in " + futureYear + "."); 
